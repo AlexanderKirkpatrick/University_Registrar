@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@model University_Registrar.Models.Student
+
+<h2>Edit</h2>
+<br>
+<br>
+<h4>Editing the Student: @Html.DisplayFor(model => model.Name)</h4>
+<br>
+<br>
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.StudentId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  @Html.LabelFor(model => model.EnrollmentDate)
+  @Html.EditorFor(model => model.EnrollmentDate, new { @type = "date" })
+
+  @Html.Label("Select Course")
+  @Html.DropDownList("CourseId")
+
+  @Html.LabelFor(model => model.CourseComplete)
+  @Html.CheckBox("CourseComplete", Model.CourseComplete)
+  <br>
+  <br>
+  <input type="submit" value="Save" />
+}
+<br>
+<br>
+<br>
+<p>@Html.ActionLink("Show All Students", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

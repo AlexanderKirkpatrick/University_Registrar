@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model University_Registrar.Models.Student
+
+<h2>Student Details</h2>
+<br>
+<br>
+@using (Html.BeginForm()) 
+{
+  <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+  <p>Date of Enrollment: @Html.DisplayFor(model => model.EnrollmentDate)</p>
+}
+<br>
+<br>
+<br>
+<p>@Html.ActionLink("Edit Student", "Edit", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Delete Student", "Delete", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Show All Students", "Index")</p>
+<p>@Html.ActionLink("Show All Courses", "Index", "Courses")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
