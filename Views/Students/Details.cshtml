@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+@using University_Registrar.Models 
 @model University_Registrar.Models.Student
 
 <h2>Student Details</h2>
@@ -11,6 +11,13 @@
 {
   <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
   <p>Date of Enrollment: @Html.DisplayFor(model => model.EnrollmentDate)</p>
+  <p>Courses:</p>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Course.Name</li>
+  }
+  </ul>
 }
 <br>
 <br>

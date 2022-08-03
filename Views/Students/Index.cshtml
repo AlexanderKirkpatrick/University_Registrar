@@ -15,7 +15,6 @@
 
 @foreach (Student student in Model)
 {
-  @Html.CheckBox("CourseComplete", @student.CourseComplete)
   <li>@Html.ActionLink($"{student.Name}", "Details", new { id = student.StudentId })</li>
 }
 <br>
