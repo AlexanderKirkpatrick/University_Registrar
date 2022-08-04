@@ -39,6 +39,8 @@ namespace University_Registrar.Controllers
       var thisDepartment = _db.Departments
         .Include(department => department.JoinEntities)
         .ThenInclude(join => join.Student)
+        .Include(department => department.JoinDeptCourse)
+        .ThenInclude(join => join.Course)
         .FirstOrDefault(department => department.DepartmentId == id);
       return View(thisDepartment);
     }

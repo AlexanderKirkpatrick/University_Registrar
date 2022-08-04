@@ -17,6 +17,9 @@
   @Html.LabelFor(model => model.Number)
   @Html.EditorFor(model => model.Number)
 
+  @Html.Label("Select Department")
+  @Html.DropDownList("DepartmentId")
+
   <input type="submit" value="Save" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>

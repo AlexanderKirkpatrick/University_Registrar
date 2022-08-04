@@ -23,6 +23,22 @@ else
   </ul>
 }
 
+@if(@Model.JoinDeptCourse.Count == 0)
+{
+  <p>This Department does not contain any courses!</p>
+}
+else
+{
+  <h4>Courses the Department contains:</h4>
+  <ul>
+  @foreach(var join in Model.JoinDeptCourse)
+  {
+    <li>@join.Course.Name</li>
+  }
+  </ul>
+}
+
 <p>@Html.ActionLink("Back to Departments", "Index")</p>
 <p>@Html.ActionLink("Edit Department", "Edit", new { id = Model.DepartmentId })</p>
 <p>@Html.ActionLink("Delete Department", "Delete", new { id = Model.DepartmentId })</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
